@@ -24,7 +24,7 @@ test:
 	 --cov-report html:coverage/coverage.html \
 	 --cov-report lcov:coverage/coverage.info
 
-all: clean set-version install flake8 build test
+all: clean set-version install flake8 build tox-run
 
 release:
 	scripts/release.sh
