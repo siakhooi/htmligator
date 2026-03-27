@@ -32,3 +32,7 @@ release:
 commit:
 	scripts/git-commit.sh
 	git push
+
+tox-run:
+	tox run
+
