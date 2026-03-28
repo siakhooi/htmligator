@@ -1,6 +1,6 @@
 help:
 clean:
-	rm -rf dist target coverage sample1.zip .tox .pytest_cache
+	rm -rf dist target coverage sample1.zip .tox .pytest_cache *.log .python-version .coverage
 run:
 	rm -f tests/test-data/sample1.html tests/test-data/sample1/*.html tests/test-data/sample1.zip
 	poetry run htmligator tests/test-data/sample1 tests/test-data/sample1
