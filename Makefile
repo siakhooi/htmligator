@@ -1,6 +1,8 @@
 help:
 clean:
-	rm -rf dist target coverage sample1.zip .tox .pytest_cache *.log .python-version .coverage
+	rm -rf dist target coverage sample1.zip .tox .pytest_cache *.log .coverage \
+	tests/__pycache__ src/htmligator/__pycache__
+
 run:
 	rm -f tests/test-data/sample1.html tests/test-data/sample1/*.html tests/test-data/sample1.zip
 	poetry run htmligator tests/test-data/sample1 tests/test-data/sample1
@@ -29,15 +31,5 @@ all: clean set-version install flake8 build tox-run
 release:
 	scripts/release.sh
 
-commit:
-	scripts/git-commit.sh
-	git push
-
 tox-run:
 	tox run
-
-fix-cert:
-	pip install pip-system-certs --trusted-host pypi.org --trusted-host files.pythonhosted.org
-
-fix-pyenv:
-	 pyenv versions --bare > .python-version
